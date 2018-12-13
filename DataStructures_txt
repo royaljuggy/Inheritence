@@ -1,0 +1,59 @@
+import java.util.HashMap;
+
+public class RestaurantForEach {
+	public static void main(String[] args) {
+    
+    // Hashmaps have a key which is used to access a value, in this case the key is String in <String, Integer) and the value is Integer
+    // using the .put method we can give a Turkey Burger a value of 13 (dollars)
+    // we can later access this price using .get("Turkey Burger) -> since Integer is the value, 13 will be returned
+		HashMap<String, Integer> restaurantMenu = new HashMap<String, Integer>();
+
+		restaurantMenu.put("Turkey Burger", 13); 
+		restaurantMenu.put("Naan Pizza", 11);
+		restaurantMenu.put("Cranberry Kale Salad", 10);
+
+		System.out.println(restaurantMenu.size());
+
+		for (String item : restaurantMenu.keySet()) {
+
+			System.out.println("A " + item + " costs " + restaurantMenu.get(item) + " dollars.");
+
+		}
+
+	}
+}
+
+// here is the complete arraylist + hashmap data structure lesson from codeacademy
+
+import java.util.*;
+
+public class GeneralizationsD {
+	public static void main(String[] args) {
+	
+    ArrayList<String> sports = new ArrayList<String>();
+    sports.add("Football");
+    sports.add("Boxing");
+    
+		for(String sport : sports) {
+				System.out.println(sport);
+		}
+
+		//Major cities and the year they were founded
+		HashMap<String, Integer> majorCities = new HashMap<String, Integer>();
+
+		majorCities.put("New York", 1624);
+		majorCities.put("London", 43);
+		majorCities.put("Mexico City", 1521);
+		majorCities.put("Sao Paulo", 1554);
+
+
+		for (String city: majorCities.keySet()) {
+
+			System.out.println(city + " was founded in " + majorCities.get(city));
+
+		}
+
+
+
+	}
+}
