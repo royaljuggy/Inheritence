@@ -1,0 +1,61 @@
+package hashmaps;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Hashmaps {
+
+    public static void main(String[] args) {
+        
+        // HashMap<reference 1, reference 2> <name> = new HashMap<>();
+        // reference 1 and 2 can be any reference type... String/Integer.. etc.
+        HashMap<String, Integer> friends = new HashMap<>();
+        
+        // HashMap is a data structure, so refer/use it like a data strucuture (ex. use it like an arraylist)
+        friends.put("Jacob", 16);
+        
+        System.out.println(friends.get("Jacob"));
+        
+        // HashMap Restaurant test!
+        
+        greeting();
+    }
+    
+    static void greeting() {
+        
+        System.out.println("Welcome to the Farmer's Market!");
+        System.out.println("-----------");
+        System.out.println("On Sale:");
+        System.out.println("Strawberries");
+        System.out.println("Blueberries");
+        System.out.println("Raspberries");
+        System.out.println("Peaches");
+        System.out.println("");
+        System.out.println("Please type a fruit to check its price! (Type 0 to stop)");  
+        checkPrice();
+    }
+    
+    static String checkPrice() {
+        
+        Scanner input = new Scanner(System.in);
+        String checkPrice = "";
+        int price = 0;
+        HashMap <String, Integer> fruits = new HashMap<>();
+        fruits.put("strawberries", 5);
+        fruits.put("blueberries", 4);
+        fruits.put("raspberries", 6);
+        fruits.put("peaches", 8);
+            
+        checkPrice = input.next();
+        checkPrice = checkPrice.toLowerCase();
+        
+        if (checkPrice.equals("0")) { // end condition (if user enters 0)
+            return null;
+        } else {
+            price = fruits.get(checkPrice);
+            System.out.println("The cost of " + checkPrice + " is $" + price);
+            return checkPrice();
+        }
+       
+    }
+}
