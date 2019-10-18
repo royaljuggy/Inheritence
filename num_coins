@@ -1,0 +1,23 @@
+class Main {
+  public static void main(String[] args) {
+    int cents = 101;
+    System.out.println(num_coins(cents));
+  }
+
+  public static int num_coins(int cents) {
+      int[] coins = {25,10,5,1};
+      int nCoins = 0;
+
+      if (cents == 0) {
+        return 0;
+      }
+
+      for (int x = 0; x < 4; x++) {
+        nCoins += cents / coins[x];
+        cents = cents % coins[x];
+      }
+
+      return nCoins;
+
+  }
+}
